@@ -1,30 +1,30 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Login from "./components/Login";
-import SignUp from "./components/Sign_Up";
-import Notification from "./components/Notification";
-import AppointmentForm from "./components/AppointmentForm";
-import AppointmentFormIC from "./components/AppointmentFormIC";
-import ProfileCard from "./components/ProfileCard";
-import GiveReviews from "./components/GiveReviews";
-import DoctorCard from "./components/DoctorCard";
-import FindDoctorSearch from "./components/FindDoctorSearch";
+import Notification from "./components/Notification"; // ✅ important
+
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
+
+      {/* ✅ GLOBAL Notification */}
       <Notification />
-      <Login />
-      <SignUp />
-      <AppointmentForm />
-      <AppointmentFormIC />
-      <ProfileCard />
-      <GiveReviews />
-      <DoctorCard />
-      <FindDoctorSearch />
-    </div>
+
+      {/* ✅ Routes */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+``
