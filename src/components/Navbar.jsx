@@ -14,20 +14,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/appointments">Appointments</Link>
-
-      {/* ✅ conditional rendering */}
-      {isLoggedIn ? (
-        <button onClick={handleLogout}>Logout</button>
-      ) : (
-        <>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
-        </>
-      )}
-    </nav>
+<nav>
+  <a href="/">Home</a> | 
+  <a href="/appointments">Appointments</a> | 
+  <a href="/login">Login</a> | 
+  <a href="/signup">Sign Up</a>
+</nav>
   );
 };
 

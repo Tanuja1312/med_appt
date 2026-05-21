@@ -1,16 +1,21 @@
 import React from "react";
+import FindDoctorSearch from "../components/FindDoctorSearch";
+import AppointmentForm from "../components/AppointmentForm";
 
-function AppointmentForm() {
+const Appointments = () => {
   return (
     <div>
       <h2>Book Appointment</h2>
-      <input placeholder="Name" /><br /><br />
-      <input placeholder="Phone Number" /><br /><br />
-      <input type="date" /><br /><br />
-      <input type="time" /><br /><br />
-      <button>Book</button>
+
+      {/* ✅ Search doctor */}
+      <FindDoctorSearch />
+
+      <br />
+
+      {/* ✅ Appointment form */}
+      <AppointmentForm />
     </div>
   );
-}
+};
 
-export default AppointmentForm;
+export default Appointments;

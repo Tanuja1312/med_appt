@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 
+<<<<<<< HEAD
 const Sign_Up = () => {
+=======
+const Signup = () => {
+>>>>>>> c583566 (Added register API in Sign_Up)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -8,6 +12,7 @@ const Sign_Up = () => {
     password: "",
     role: "",
   });
+<<<<<<< HEAD
 
   const handleChange = (e) => {
     setFormData({
@@ -32,11 +37,14 @@ const Sign_Up = () => {
     console.log(data);
     alert("User registered successfully");
   };
+=======
+>>>>>>> c583566 (Added register API in Sign_Up)
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Sign Up</h2>
 
+<<<<<<< HEAD
       <input name="name" placeholder="Name" onChange={handleChange} />
       <br />
 
@@ -50,6 +58,21 @@ const Sign_Up = () => {
       <br />
 
       <select name="role" onChange={handleChange}>
+=======
+      <input placeholder="Name" />
+      <br /><br />
+
+      <input placeholder="Email" />
+      <br /><br />
+
+      <input placeholder="Phone" />
+      <br /><br />
+
+      <input type="password" placeholder="Password" />
+      <br /><br />
+
+      <select>
+>>>>>>> c583566 (Added register API in Sign_Up)
         <option>Select Role</option>
         <option>Patient</option>
         <option>Doctor</option>
@@ -62,4 +85,8 @@ const Sign_Up = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Sign_Up;
+=======
+export default Signup;
+>>>>>>> c583566 (Added register API in Sign_Up)
