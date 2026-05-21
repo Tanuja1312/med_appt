@@ -1,10 +1,6 @@
 import React, { useState } from "react";
 
-<<<<<<< HEAD
 const Sign_Up = () => {
-=======
-const Signup = () => {
->>>>>>> c583566 (Added register API in Sign_Up)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,7 +8,6 @@ const Signup = () => {
     password: "",
     role: "",
   });
-<<<<<<< HEAD
 
   const handleChange = (e) => {
     setFormData({
@@ -21,61 +16,68 @@ const Signup = () => {
     });
   };
 
+  // ✅ IMPORTANT: API CALL
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // ✅ API CALL (IMPORTANT)
-    const response = await fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
+    try {
+      const response = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    const data = await response.json();
-    console.log(data);
-    alert("User registered successfully");
+      const data = await response.json();
+
+      console.log(data);
+      alert("User registered successfully");
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
-=======
->>>>>>> c583566 (Added register API in Sign_Up)
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Sign Up</h2>
 
-<<<<<<< HEAD
-      <input name="name" placeholder="Name" onChange={handleChange} />
-      <br />
+      <input
+        type="text"
+        name="name"
+        placeholder="Enter Name"
+        onChange={handleChange}
+      />
+      <br /><br />
 
-      <input name="email" placeholder="Email" onChange={handleChange} />
-      <br />
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter Email"
+        onChange={handleChange}
+      />
+      <br /><br />
 
-      <input name="phone" placeholder="Phone" onChange={handleChange} />
-      <br />
+      <input
+        type="text"
+        name="phone"
+        placeholder="Enter Phone"
+        onChange={handleChange}
+      />
+      <br /><br />
 
-      <input name="password" type="password" placeholder="Password" onChange={handleChange} />
-      <br />
+      <input
+        type="password"
+        name="password"
+        placeholder="Enter Password"
+        onChange={handleChange}
+      />
+      <br /><br />
 
       <select name="role" onChange={handleChange}>
-=======
-      <input placeholder="Name" />
-      <br /><br />
-
-      <input placeholder="Email" />
-      <br /><br />
-
-      <input placeholder="Phone" />
-      <br /><br />
-
-      <input type="password" placeholder="Password" />
-      <br /><br />
-
-      <select>
->>>>>>> c583566 (Added register API in Sign_Up)
-        <option>Select Role</option>
-        <option>Patient</option>
-        <option>Doctor</option>
+        <option value="">Select Role</option>
+        <option value="patient">Patient</option>
+        <option value="doctor">Doctor</option>
       </select>
 
       <br /><br />
@@ -85,8 +87,4 @@ const Signup = () => {
   );
 };
 
-<<<<<<< HEAD
 export default Sign_Up;
-=======
-export default Signup;
->>>>>>> c583566 (Added register API in Sign_Up)
